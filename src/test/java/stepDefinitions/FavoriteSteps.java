@@ -84,11 +84,9 @@ public class FavoriteSteps extends ReusableMethods {
 
         randomProductName = selectedProduct.getAttribute("title");
 
-        ((JavascriptExecutor) BaseDriver.getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center'});", selectedProduct);
+        scrollToElement(selectedProduct);
 
-        threadWait(1);
-
-        ((JavascriptExecutor) BaseDriver.getDriver()).executeScript("arguments[0].click();", selectedProduct);
+        jsClick(selectedProduct);
     }
 
     @And("User clicks on the {string} icon")
