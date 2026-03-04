@@ -76,7 +76,17 @@ public class FavoriteSteps extends ReusableMethods {
 
     @And("User clicks on a random product from the list")
     public void userClicksOnARandomProductFromTheList() {
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".productItem .productName a")));
 
+        int size = pp.productList.size();
+        int randomIndex = new Random().nextInt(size);
+        WebElement selectedProduct = pp.productList.get(randomIndex);
+
+        randomProductName = selectedProduct.getAttribute("title");
+
+        scrollToElement(selectedProduct);
+
+        jsClick(selectedProduct);
     }
 
     @And("User clicks on the {string} icon")
