@@ -30,7 +30,7 @@ public class LoginSteps extends ReusableMethods {
 
     @And("User clicks the {string} Option")
     public void userClicksTheOption(String arg0) {
-        myClick(lp.myAccountOpt);
+        myClick(hp.myAccountOpt);
     }
 
     @Then("User should see {string} text or their account name")

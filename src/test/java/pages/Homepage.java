@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.BaseDriver;
 
+import java.util.List;
+
 public class Homepage {
     public Homepage() {
         PageFactory.initElements(BaseDriver.driver, this);
@@ -33,4 +35,13 @@ public class Homepage {
 
     @FindBy(id = "divMemberPanel")
     public WebElement loginOpt;
+
+    @FindBy(className = "headerHesabim")
+    public WebElement myAccountOpt;
+
+    @FindBy(xpath = "//div[@class='favi']")
+    public WebElement favoritesButton;
+
+    @FindBy(xpath = "//div[@id='divUcTopMenu']/ul/li")
+    public List<WebElement> navMenuElements;
 }
